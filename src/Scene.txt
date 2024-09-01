@@ -1,0 +1,16 @@
+import React from 'react'
+import * as THREE from 'three';
+import {  useTexture } from '@react-three/drei';
+
+const Scene = () => {
+    let img = useTexture("./chainsaw.png")
+    img.needsUpdate= true;
+  return (
+    <mesh>
+        <cylinderGeometry args={[2, 2, 2.3, 30, 30, true]} />
+        <meshStandardMaterial map={img} side={THREE.DoubleSide} />
+      </mesh>
+  )
+}
+
+export default Scene
